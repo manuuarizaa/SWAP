@@ -29,7 +29,7 @@ Ahora hacemos una copia de la clave a la máquina principal (a la que queremos a
 De esta manera, cuando hagamos **SSH** a la máquina principal, no nos pedirá la contraseña.
 
 ## establecer una tarea en cron que se ejecute cada hora para mantener actualizado el contenido del directorio /var/www entre las dos máquinas
-Editamos el archivo **/etc/crontab** y añadimos una tarea nueva, en nuestro caso, clonar cada minuto el contenido de la carpeta **/var/www**:
+Editamos el archivo **/etc/crontab** y añadimos una tarea nueva, en nuestro caso, clonar cada minuto (en vez de una hora para hacer una comprobación rapida de que funciona) el contenido de la carpeta **/var/www**:
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica2/automatizarTarea.png)
 Y ahora comprobamos que la tarea funciona:
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica2/ComprobacionTareaCron.png)
