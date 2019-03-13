@@ -33,3 +33,4 @@ Editamos el archivo **/etc/crontab** y añadimos una tarea nueva, en nuestro cas
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica2/automatizarTarea.png)
 Y ahora comprobamos que la tarea funciona:
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica2/ComprobacionTareaCron.png)
+Como vemos,inicialmente no aparece el archivo **miprueba.txt** en la máquina 2, al minuto y tras hacer un *ls* vemos como la tarea ha funcionado correctamente y ya aparece el nuevo archivo.
