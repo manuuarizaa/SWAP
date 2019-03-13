@@ -10,13 +10,16 @@
 Encendemos ambas máquinas virtuales y lo primero que hacemos es comprobar que tenemos conexión entre ambas, para ello hacemos en cada una, un ping a la otra máquina.
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica2/ComprobacionPing.png)
 
-Creamos un archivo llamado **nuevoArchivo** en una máquina y, en mi caso, pongo: **tar czf - nuevoArchivo.txt | ssh 192.168.1.200 'cat > ~/tar.tgz'**
+Creamos un archivo llamado **nuevoArchivo** en una máquina y, en mi caso, pongo: **tar czf - nuevoArchivo.txt | ssh 192.168.1.200 ' cat > ~/tar.tgz'**
 Ahora ponemos *yes* y la contraseña de la máquina donde vamos a crear el *tar.tgz* y como podemos comprobar, la copia se ha realizado correctamente por ssh.
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica2/pruebaCopiaSSH.png)
 
 ## Clonado de una carpeta entre las dos maquinas
 Como detalle previo, tenemos que hacer que el usuario sea el dueño de la carpeta donde residen los archivos que hay en el espacio web, esto se realiza en ambas máquinas.
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica2/UsoChown.png)
+Y hacemos el comando: **rsync -avz -e ssh manuariza@192.168.1.100:/var/www/ /var/www/** en la máquina secundaria para clonar el contenido del servidor web principal en la máquina 2.
+![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica2/UsoDeClone.png)
+Como se puede ver en la imagen, en la maquina principal(la izquierda) creamos un archivo, en la secundaria hacemos el comando y se puede ver como el contenido se ha clonado correctamente.
 
 ## Configuración de ssh para acceder sin que solicite contraseña
 
