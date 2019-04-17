@@ -59,6 +59,7 @@ Ya podemos, con otra máquina, lanzar peticiones al balanceador, en mi caso es l
 
 Vemos el funcionamiento de lo que se nos pide:
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica3/p3funcionandohaproxy.png)
+En la imagen podemos ver abajo a la izquierda el balanceador, la maquina **50**, arriba podemos ver las dos máquinas que reciben las peticiones, la **100** y la **200**, y por último abajo a la derecha la máquina con la que realizamos la petición al balanceador.
 
 
 
