@@ -28,6 +28,40 @@ Comprobamos el estado de NGINX una vez que hemos hecho toda la configuración:
 
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica3/statusNginx.png)
 
+## Instalar haproxy como balanceador de carga y configuración
+Para instalar haproxy usamos todo tal cual dice el guión de prácticas, para instalarlo usamos el comando **sudo apt-get install haproxy** y luego nos metemos en **/etc/haproxy/haproxy.cfg** y ponemos la siguiente configuración:
+
+**global**
+	daemon
+	maxconn 256
+
+**defaults**
+	mode http
+contimeout 4000
+clitimeout 42000
+srvtimeout 43000
+
+**frontend http-in**
+	bind * :80
+	default_backend servers
+
+**backend servers**
+server m1 192.168.1.100:80 maxconn 32
+server m2 192.168.1.200:80 maxconn 32
+
+Una vez todo configurado con haproxy, lo lanzamos con el comando:
+**sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg**
+
+En esta máquina vemos que funciona correctamente:
+![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica3/HaproxyFuncionando.png)
+
+Ya podemos, con otra máquina, lanzar peticiones al balanceador, en mi caso es la máquina que termina en **50**.
+
+Vemos el funcionamiento de lo que se nos pide:
+![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica3/p3funcionandohaproxy.png)
+
+
+
 
 
 
