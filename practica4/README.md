@@ -1,6 +1,6 @@
-##Práctica 4. Asegurar la granja web
+## Práctica 4. Asegurar la granja web
 
-#Instalar el certificado SSL
+# Instalar el certificado SSL
 Con root ejecutamos:
 **a2emod ssl
 service apache 2 restart
@@ -21,7 +21,7 @@ service apache2 reload
 Ahora con **CURL** comprobamos que se puede acceder a la máquina 1 mediante**https**:
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica4/curlhttpsMaquina1.png)
 
-#Balanceo con https
+# Balanceo con https
 Para la máquina 2, copiamos los certificados y activamos el sitio y reiniciamos tal como hicimos en la máquina 1, el método que se ha usado para copiar los certificados de una máquina a otra es el siguiente:
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica4/MetodoCopiarCRTyKey.png)
 
@@ -39,7 +39,7 @@ y reiniciarlo.
 Ahora ya podemos hacer peticiones con https al balanceador y comprobamos que lo hace correctamente:
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica4/FuncionaCurlHTTPS.png)
 
-#Configurar cortafuegos
+# Configurar cortafuegos
 Para configurar el cortafuegos creamos un script, en mi caso en la carpeta scripts, como sigue:
 
 ![imagen](https://github.com/manuuarizaa/SWAP/blob/master/practica4/scriptIPTABLESfuncionando.png)
